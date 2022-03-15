@@ -1,11 +1,9 @@
+import { Ingredient } from './ingredient.model';
 export class Recipe {
-  name: string;
-  description: string;
-  imgPath: string;
-
-  constructor(name: string, desc: string, imgPath: string) {
-    this.name = name;
-    this.description = desc;
-    this.imgPath = imgPath;
-  }
+  constructor(
+    public name: string,
+    public description: string,
+    public imgPath: string,
+    public ingredients: Ingredient[]
+  ) {}
 }

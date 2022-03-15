@@ -1,38 +1,60 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img class="img-responsive" src="" alt="">
+<section class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <img
+        class="img-responsive"
+        [src]="recipe.imgPath"
+        [alt]="recipe.name"
+      >
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>Recipe Name</h1>
-  </div>
-</div>
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-between align-items-center">
+      <h1>{{ recipe.name }}</h1>
 
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <div class="dropdown">
-        <a id="dropdown" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage Recipe</a>
-        <ul class="dropdown-menu" aria-labelledby="dropdown">
-          <li><a class="dropdown-item" href="">To Shopping List</a></li>
-          <li><a class="dropdown-item" href="">Edit Recipe</a></li>
-          <li><a class="dropdown-item" href="">Remove Recipe</a></li>
-        </ul>
+      <div class="btn-group">
+        <div class="dropdown">
+          <a
+            id="dropdown"
+            class="btn btn-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >Manage Recipe
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdown">
+            <li><a class="dropdown-item" href="">To Shopping List</a></li>
+            <li><a class="dropdown-item" href="">Edit Recipe</a></li>
+            <li><a class="dropdown-item" href="">Remove Recipe</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="ro">
-  <div class="col-xs-12">
-    Description
-  </div>
-</div>
+  <div class="row">
+    <div class="col-xs-12">
 
-<div class="row">
-  <div class="col-xs-12">
-    Ingredients
+    </div>
   </div>
-</div>
+
+  <div class="ro">
+    <div class="col-xs-12 my-3">
+      {{ recipe.description }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li
+          *ngFor="let ingredient of recipe.ingredients; let i = index"
+          class="list-group-item">
+          {{ ingredient.name }} ({{ ingredient.amount }})
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</section>
