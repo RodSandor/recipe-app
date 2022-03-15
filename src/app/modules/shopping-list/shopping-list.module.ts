@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShoppingEditComponent } from './components/shopping-edit/shopping-edit.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './components/shopping-edit/shopping-edit.component';
+import { ShoppingListRoutingModule } from './shopping-list-routing.module';
 
 
 @NgModule({
@@ -11,11 +12,8 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
     ShoppingListComponent
   ],
   imports: [
-    CommonModule
-  ],
-  exports: [
-    ShoppingEditComponent,
-    ShoppingListComponent
+    CommonModule,
+    ShoppingListRoutingModule
   ]
 })
 export class ShoppingListModule { }

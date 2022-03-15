@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HeaderComponent,
+    AppComponent,
   ],
   imports: [
     ShoppingListModule,
