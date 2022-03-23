@@ -1,9 +1,11 @@
+@use '../../../../assets/styles/abstract' as *;
+
 a {
   color: white;
   &:hover,
   &.active {
     font-weight: 700;
-    color: white;
+    color: $primary;
   }
 }
 h1 {

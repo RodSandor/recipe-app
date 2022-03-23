@@ -1,0 +1,7 @@
+a {
+  transition: 0.4s;
+  &.active,
+  &:hover {
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+}

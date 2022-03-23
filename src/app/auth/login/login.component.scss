@@ -1,0 +1,13 @@
+.login {
+  margin: 0 auto;
+  &-form {
+    width: 300px;
+  }
+  .title h1 {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .icon-book-open1 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,46 @@
+<section>
+  <div class="login mt-5">
+    <div *ngIf="error" class="alert alert-danger mt-3">
+      <p class="text-danger">{{ error }}</p>
+    </div>
+
+    <div *ngIf="isLoading" class="text-center">
+      <app-loader></app-loader>
+    </div>
+
+    <form *ngIf="!isLoading" class="login-form container" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="title text-center">
+        <i class="icon-book-open1"></i>
+        <h1>Login</h1>
+      </div>
+
+      <div class="mt-3">
+        <label class="form-label">Email</label>
+        <input
+          class="form-control"
+          name="email"
+          type="text"
+          id="email"
+          required
+          ngModel>
+      </div>
+
+      <div class="mt-3">
+        <label class="fomr-label">Password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          minlength="6"
+          id="password"
+          required
+          ngModel>
+      </div>
+
+      <div class="d-grid mt-3">
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">{{ isLoggedIn ? 'Login' : 'Signup'}}</button>
+        <button class="btn btn-primary" type="button" (click)="onSwitchMode()">Switch</button>
+      </div>
+    </form>
+  </div>
+</section>
