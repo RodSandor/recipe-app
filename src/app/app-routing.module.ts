@@ -1,3 +1,4 @@
+import { Authguard } from './core/guards/auth.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 const routes: Routes = [
   {
     path: '',
+    canActivate: [Authguard],
     loadChildren: () => import('./modules/recipes/recipes.module').then(m => m.RecipesModule)
   },
   {
