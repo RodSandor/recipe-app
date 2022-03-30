@@ -1,8 +1,11 @@
-import { AuthResponseData } from './../../core/models/auth-response';
-import { Observable } from 'rxjs';
-import { AuthService } from './../../core/services/http/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+
+import { Observable } from 'rxjs';
+
+import { AuthService } from './../../core/services/http/auth.service';
+import { AuthResponseData } from './../../core/models/auth-response';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +18,8 @@ export class LoginComponent implements OnInit {
   error: string;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +44,7 @@ export class LoginComponent implements OnInit {
     authObs.subscribe(
       resData => {
       this.isLoading = false;
+      this.router.navigate(['/recipes']);
     },
       errorMsg => {
         console.log(errorMsg);

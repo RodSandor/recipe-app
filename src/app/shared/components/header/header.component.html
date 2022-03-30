@@ -12,6 +12,7 @@
 
       <ul
         class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        *ngIf="isAuth"
       >
         <li>
           <a
@@ -31,9 +32,10 @@
         </li>
       </ul>
 
-      <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2" (click)="onSaveData()">Save</button>
-        <button type="button" class="btn btn-warning" (click)="onFetchData()">Fetch</button>
+      <div class="text-end" *ngIf="isAuth">
+        <a class="" (click)="onSaveData()">Save</a>
+        <a class="mx-2" (click)="onFetchData()">Fetch</a>
+        <a class="text-danger" (click)="onLogout()">Logout</a>
       </div>
     </div>
   </div>
