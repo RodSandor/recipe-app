@@ -58,4 +58,8 @@ export class LoginComponent implements OnInit {
   onSwitchMode() {
     this.isLoggedIn = !this.isLoggedIn;
   }
+
+  onHandleError() {
+    this.error = null;
+  }
 }

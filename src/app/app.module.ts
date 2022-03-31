@@ -13,6 +13,7 @@ import { RecipeService } from './core/services/recipe.service';
 import { LoginComponent } from './auth/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
     AppComponent,
     LoginComponent,
     LoaderComponent,
+    AlertComponent,
   ],
   imports: [
     ShoppingListModule,

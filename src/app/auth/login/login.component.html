@@ -1,8 +1,10 @@
 <section>
   <div class="login mt-5">
-    <div *ngIf="error" class="alert alert-danger mt-3">
+    <!-- <div *ngIf="error" class="alert alert-danger mt-3">
       <p class="text-danger">{{ error }}</p>
-    </div>
+    </div> -->
+
+    <app-alert *ngIf="error" [message]="error" (close)="onHandleError()"></app-alert>
 
     <div *ngIf="isLoading" class="text-center">
       <app-loader></app-loader>
